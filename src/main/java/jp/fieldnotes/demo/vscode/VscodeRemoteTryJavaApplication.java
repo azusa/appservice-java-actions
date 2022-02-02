@@ -1,4 +1,4 @@
-package jp.fieldnotes.demo.vscode.vscoderemotetryjava;
+package jp.fieldnotes.demo.vscode;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
