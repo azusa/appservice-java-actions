@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch VscodeRemoteTryJavaApplication",
+            "request": "launch",
+            "mainClass": "jp.fieldnotes.demo.vscode.vscoderemotetryjava.VscodeRemoteTryJavaApplication",
+            "projectName": "vscode-remote-try-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch VscodeRemoteTryJavaApplication",
+            "request": "launch",
+            "mainClass": "jp.fieldnotes.demo.vscode.vscoderemotetryjava.VscodeRemoteTryJavaApplication",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch App",
             "request": "launch",
             "cwd": "${workspaceFolder}",
