@@ -39,7 +39,8 @@ jobs:
       - name: Set up Java version
         uses: actions/setup-java@v2.3.1
         with:
-          java-version: ${{ env.JAVA_VERSION }}
+          # java-version: ${{ env.JAVA_VERSION }}
+          java-version: '17'
           cache: 'maven'
 
       - name: Build with Maven
