@@ -9,6 +9,6 @@ public class HelloContoroller {
     
     @RequestMapping(path="/hello", method = RequestMethod.GET)
     public String hello() {
-        return "Hello!";
+        return "Hello!, Azure";
     }
 }
