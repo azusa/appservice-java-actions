@@ -19,29 +19,18 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
-    - name: Set up Java version
-      uses: actions/setup-java@v2.3.1
-      with:
-        distribution: 'temurin'
-        java-version: '17'
-        cache: 'maven'
-
     - name: Log in to registry
       uses: docker/login-action@v1
       with:
-        registry: https://mcr.microsoft.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_e10b86b519be4541b0ab44c319933bc7 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_f2b7d084b9a248b1a278ffa9f166dfbb }}
-
-    - name: Build with Maven
-      run: mvn clean install
-
+        registry: https://fieldnotesjp.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_241a515ec15442168155641eec071c48 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_e17fb8af9b1140a0a4e58f0943f79445 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_e10b86b519be4541b0ab44c319933bc7 }}/appsvc/staticsite:${{ github.sha }}
+        tags: fieldnotesjp.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_241a515ec15442168155641eec071c48 }}/appsvc/staticsite:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -58,5 +47,5 @@ jobs:
       with:
         app-name: 'fieldnotesjp-clouddeveloper'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5c962b9ae9a442db9050bd08db4044b3 }}
-        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_e10b86b519be4541b0ab44c319933bc7 }}/appsvc/staticsite:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_fff4b180d9cd48c98f3fce7cf75b12e9 }}
+        images: 'fieldnotesjp.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_241a515ec15442168155641eec071c48 }}/appsvc/staticsite:${{ github.sha }}'
